@@ -3,10 +3,17 @@ let game= {
      * Запускает игру
      */
     run(){
-        // Последовательно выводим вопросы с вариантами ответов
-        asker.showQuestions();
-        console.log("Игра окончена");
-        console.log(player.showScore());
+        while(true){
+            // Последовательно выводим вопросы с вариантами ответов
+            asker.showQuestions();
+            console.log("Игра окончена!");
+            console.log(player.showScore());
+
+            if (!confirm('Сыграем ещё раз?')){                
+                console.log("До встречи!");
+                break;
+            }
+        }
     },
 
     // Этот метод выполняется при открытии страницы.
